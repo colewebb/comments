@@ -2,14 +2,14 @@ import sys
 
 
 class Comments:
-    def __init__(self):
-        pass
+    def __init__(self, tab_length=4):
+        self.tab_length = tab_length
 
     def add_line(self, line, length):
-        return line.rstrip() + (length - len(line)) * " "
+        return line.rstrip() + (length - len(line) + self.tab_length) * " "
 
-    def add_comment(self, line, length):
-        l = self.add_line(line, length) + "# "
+    def add_comment(self, line, length, comment="#"):
+        l = self.add_line(line, length) + comment + " "
         print(l, end="")
         comment = input("")
         return l + comment
