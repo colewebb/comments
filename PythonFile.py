@@ -3,7 +3,7 @@ import File
 import Line
 
 
-class PythonFile(File):
+class PythonFile(File.File):
     def __init__(self, filename):
         self.filename = filename
         self.file = [[]]

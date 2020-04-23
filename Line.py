@@ -8,7 +8,7 @@ class Line:
         return self.contents.startswith(find)
 
     def add_comment(self, comment, longest):
-        self.contents = self.contents + (longest - len(self.contents) + 4) * " " + self.comment_block + " " + comment
+        self.contents = self.contents.strip() + (longest - len(self.contents) + 4) * " " + self.comment_block + " " + comment + '\n'
 
     def __str__(self):
         return self.contents
